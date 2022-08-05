@@ -1,10 +1,5 @@
 #!/bin/bash
 
-has_pre_commit() {
-  command -v pre-commit &> /dev/null
-  return $?
-}
-
 has_detect_secrets() {
   command -v detect-secrets &> /dev/null
   return $?
@@ -15,8 +10,8 @@ has_detect_secrets_wordlist() {
   return $?
 }
 
-if has_pre_commit && has_detect_secrets && has_detect_secrets_wordlist ; then
-  echo "All required tools are already installed. Run 'pre-commit install' on the root of the repository to install pre-commit hooks."
+if has_detect_secrets && has_detect_secrets_wordlist ; then
+  echo "Detect-secrets is already installed."
   exit 0
 fi
 
@@ -26,14 +21,15 @@ do_pip() {
   elif command -v pip3 $> /dev/null ; then
     command pip3 "$@"
   else
-    echo "ERROR: 'pip' is required to install pre-commit hooks. Make sure that either 'pip' or 'pip3' is installed and in PATH."
+    echo "ERROR: 'pip' is required to install detect-secrets. Make sure that either 'pip' or 'pip3' is installed and in PATH."
+    echo "https://pip.pypa.io/en/stable/installation/"
     exit 1
   fi
 }
 
 echo "Installing required tools"
 
-do_pip install pre-commit==2.20.0 detect-secrets==1.3.0 pyahocorasick==1.4.4
+do_pip install detect-secrets==1.3.0 pyahocorasick==1.4.4
 
 if ! [[ $? ]] ; then
   exit_val=$?
@@ -46,4 +42,4 @@ if ! has_detect_secrets_wordlist ; then
   exit 1
 fi
 
-echo "Installation successful! Run 'pre-commit install' on the root of the repository to install pre-commit hooks."
+echo "Installation successful!"
