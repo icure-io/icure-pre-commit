@@ -1,6 +1,6 @@
 # iCure pre-commit
 
-Shared pre-commit hooks scripts, tools installation scripts and sample configurations.
+Installation scripts, sample configurations, custom detect-secrets plugins/filter and any other files related to pre-commit hooks we may want to share across multiple iCure projects.
 
 ## Installation scripts
 
