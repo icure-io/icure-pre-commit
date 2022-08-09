@@ -7,10 +7,10 @@ from detect_secrets.util.code_snippet import CodeSnippet
 
 
 _key_file_postfixes = {
-        ".key",
-        ".privkey",
-        ".privKey"
-    }
+    ".key",
+    ".privkey",
+    ".privKey"
+}
 
 
 class KeyFileDetector(BasePlugin):

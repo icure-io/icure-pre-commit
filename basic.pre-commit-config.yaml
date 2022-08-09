@@ -11,4 +11,6 @@ repos:
     rev: v2.3.0
     hooks:
     - id: end-of-file-fixer
+      exclude: ^.*\.mustache$
     - id: trailing-whitespace
+      exclude: ^.*\.mustache$

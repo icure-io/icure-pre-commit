@@ -11,9 +11,11 @@ repos:
     rev: v2.3.0
     hooks:
     - id: end-of-file-fixer
+      exclude: ^.*\.mustache$
     - id: trailing-whitespace
+      exclude: ^.*\.mustache$
   - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
     rev: v2.4.0
     hooks:
     - id: pretty-format-kotlin
-      args: [--autofix, --ktlint-version, "0.46.1"]
+      args: ["--autofix", "--ktlint-version", "0.46.1"]

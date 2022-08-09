@@ -1,4 +1,4 @@
-from re import fullmatch, compile, Pattern
+from re import fullmatch, compile
 from typing import Generator, Any, Set
 import hashlib
 
@@ -7,7 +7,7 @@ from detect_secrets.plugins.base import BasePlugin
 from detect_secrets.util.code_snippet import CodeSnippet
 
 
-_encode_patterns = set(map(
+_encode_patterns = list(map(
     lambda x: compile(x, flags=0),
     {
         r'[0-9a-f]+\s*',  # Hex all lowercase
