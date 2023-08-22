@@ -9,6 +9,7 @@ Script to install various tools useful or necessary for pre-commit hooks.
 - **install_required_tools.sh:** system-wide installation of all tools required by pre-commit hooks (currently only `pre-commit` itself). This script will NOT set up the pre-commit hooks: after the installation is successful you must manually run `pre-commit install`.
 - **install_optional_detect-secrets.sh:** system-wide installation of `detect-secrets`, only necessary to create new secrets baseline or to update an existing baseline. This is usually not necessary if a secret baseline already exists, since pre-commit will automatically install `detect-secrets` in an isolated environment for executing the pre-commit hook.
 
+
 ## Sample configurations
 
 Sample configurations for pre-commit hooks. To use one of these configurations copy it to the root of your repository, rename it to `.pre-commit-config.yaml` and run `pre-commit install`.
